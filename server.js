@@ -52,7 +52,7 @@ app.get("/", function (req, res) {
 
 app.get("/scrape", function (req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://old.reddit.com/r/popular/").then(function (response) {
+  axios.get("https://old.reddit.com/r/todayilearned/").then(function (response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     const $ = cheerio.load(response.data);
     

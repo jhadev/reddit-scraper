@@ -15,10 +15,11 @@ body {
 
 h1 {
   font-family: 'Lora', serif;
-  font-size: 48px;
+  font-size: 42px;
 }
 
 a {
+  margin-top: 2px;
   margin-bottom: 2px;
 }
 

@@ -3,7 +3,7 @@ $.getJSON("/articles", (articles) => {
 
     $("#articles").append(`<p class='shownotes' data-id=${article._id}>
     ${article.title}</p>
-    <a target="_blank" href="https://reddit.com${article.link}">View on Reddit.com</a>
+    <a target="_blank" href="${article.link}">View Source</a>
     `);
   });
 })
