@@ -27,9 +27,9 @@ $(document).on("click", ".shownotes", function () {
       // The title of the article
       $("#notes").append(`<h4>${data.title}</h4>`);
       // An input to enter a new title
-      $("#notes").append(`<input class='form-control rounded-0 m2' id='titleinput' name='title'>`);
+      $("#notes").append(`<input class='form-control rounded-0 m2' placeholder='Note Title' id='titleinput' name='title'>`);
       // A textarea to add a new note body
-      $("#notes").append(`<textarea id='bodyinput' class='form-control rounded-0 mt-2' name='body'></textarea>`);
+      $("#notes").append(`<textarea id='bodyinput' placeholder='Write Note Here' class='form-control rounded-0 mt-2' name='body'></textarea>`);
       // A button to submit a new note, with the id of the article saved to it
       $("#notes").append(`<button data-id='${data._id}' id='savenote' class='btn btn-primary mt-2'>Save Note</button>`);
 
