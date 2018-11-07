@@ -13,7 +13,7 @@ $(document).on("click", ".shownotes", function () {
   $("#notes").empty();
 
   $('body').animate({
-    scrollTop: $("#notes").offset().top
+    scrollTop: $(".container").offset().top
   }, 2000);
 
   let thisId = $(this).attr("data-id");
@@ -25,7 +25,7 @@ $(document).on("click", ".shownotes", function () {
     .then((data) => {
       console.log(data);
       // The title of the article
-      $("#notes").append(`<h3>${data.title}</h3>`);
+      $("#notes").append(`<h4>${data.title}</h4>`);
       // An input to enter a new title
       $("#notes").append(`<input class='form-control m2' id='titleinput' name='title'>`);
       // A textarea to add a new note body
