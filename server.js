@@ -40,8 +40,17 @@ mongoose.connect(MONGODB_URI);
 
 // Routes
 
-// A GET route for scraping the echoJS website
 app.get("/", function (req, res) {
+  db.Article.find({})
+    .then((dbUser) => {
+      res.render('index')
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
+
+app.get("/scrape", function (req, res) {
   // First, we grab the body of the html with axios
   axios.get("https://old.reddit.com/r/popular/").then(function (response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
@@ -67,8 +76,7 @@ app.get("/", function (req, res) {
           return res.json(err);
         });
     });
-
-    res.render('index');
+    res.redirect('/');
   });
 });
 
