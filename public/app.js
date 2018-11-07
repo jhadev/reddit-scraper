@@ -3,25 +3,29 @@ $.getJSON("/articles", (articles) => {
 
     $("#articles").append(`<p class='shownotes' data-id=${article._id}>
     ${article.title}</p>
-    <a target="_blank" href="https://reddit.com${article.link}">${article.link}</a>
+    <a target="_blank" href="https://reddit.com${article.link}">View on Reddit.com</a>
     `);
-});
+  });
 })
 
-$(document).on("click", ".shownotes", function() {
+$(document).on("click", ".shownotes", function () {
 
   $("#notes").empty();
+
+  $('body').animate({
+    scrollTop: $("#notes").offset().top
+  }, 2000);
 
   let thisId = $(this).attr("data-id");
 
   $.ajax({
-    method: "GET",
-    url: "/articles/" + thisId
-  })
+      method: "GET",
+      url: "/articles/" + thisId
+    })
     .then((data) => {
       console.log(data);
       // The title of the article
-      $("#notes").append(`<h2>${data.title}</h2>`);
+      $("#notes").append(`<h3>${data.title}</h3>`);
       // An input to enter a new title
       $("#notes").append(`<input class='form-control m2' id='titleinput' name='title'>`);
       // A textarea to add a new note body
@@ -36,18 +40,18 @@ $(document).on("click", ".shownotes", function() {
     });
 });
 
-$(document).on("click", "#savenote", function() {
+$(document).on("click", "#savenote", function () {
   var thisId = $(this).attr("data-id");
 
   $.ajax({
-    method: "POST",
-    url: "/articles/" + thisId,
-    data: {
-      title: $("#titleinput").val(),
-      body: $("#bodyinput").val()
-    }
-  })
-    .then(function(data) {
+      method: "POST",
+      url: "/articles/" + thisId,
+      data: {
+        title: $("#titleinput").val(),
+        body: $("#bodyinput").val()
+      }
+    })
+    .then(function (data) {
       $("#notes").empty();
     });
 
