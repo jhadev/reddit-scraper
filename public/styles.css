@@ -9,9 +9,13 @@ body {
   font-family: 'Lora', serif;
 }
 
+.background {
+  background: linear-gradient(#0575e6, #021b79)
+}
+
 h1 {
   font-family: 'Lora', serif;
-  font-size: 60px;
+  font-size: 48px;
 }
 
 a {
