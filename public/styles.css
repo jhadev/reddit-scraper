@@ -1,7 +1,7 @@
 .shownotes {
   font-size: 16px;
   font-weight: bolder;
-  margin-top: 8px;
+  margin-top: 5px;
   cursor: pointer;
 }
 
@@ -28,4 +28,14 @@ a {
   font-family: 'Lora', serif;
   font-size: 18px;
 }
+
+#notes {
+  margin-top: 5px;
+}
+
+img {
+  height: 80px;
+  width: 80px;
+}
+
 
