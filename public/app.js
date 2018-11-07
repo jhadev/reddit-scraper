@@ -8,7 +8,7 @@ $.getJSON("/articles", (articles) => {
   });
 })
 
-$(document).on("click", ".shownotes", function () {
+$(document).on("click", "p", function () {
 
   $("#notes").empty();
 

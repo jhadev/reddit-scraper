@@ -33,10 +33,7 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-var MONGODB_URI = process.env.MONGODB_URI || ("mongodb://localhost/reddit",
-{
-  useNewUrlParser: true
-});
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/reddit";
 
 mongoose.connect(MONGODB_URI);
 // Connect to the Mongo DB
