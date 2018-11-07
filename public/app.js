@@ -2,7 +2,7 @@ $.getJSON("/articles", articles => {
   articles.forEach(article => {
     $("#articles").append(`<p class='shownotes' data-id=${article._id}>
     ${article.title}</p>
-    <a target="_blank" href="${article.link}">View Source</a>
+    <a class='link' target="_blank" href="${article.link}">View Source</a>
     `);
   });
 });

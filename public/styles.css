@@ -1,5 +1,5 @@
 .shownotes {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bolder;
   margin-top: 5px;
   cursor: pointer;
@@ -18,10 +18,9 @@ h1 {
   font-size: 42px;
 }
 
-a {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  font-size: 14px;
+.link {
+  margin-bottom: 4px;
+  font-size: 16px;
 }
 
 .card-header {
