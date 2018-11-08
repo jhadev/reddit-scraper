@@ -18,6 +18,10 @@ h1 {
   font-size: 42px;
 }
 
+h4 {
+  margin-bottom: 5px;
+}
+
 .link {
   margin-bottom: 4px;
   font-size: 16px;
@@ -45,4 +49,23 @@ img {
 
 .btn-outline-light:hover {
   color: #FF5700
+}
+
+.btn-primary {
+  background-color: #FF5700;
+  border-color: #FF5700
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #FF5700;
+  border-color: #FF5700
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+#bodyinput {
+  height: 200px;
 }

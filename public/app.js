@@ -25,7 +25,7 @@ $(document).on("click", ".shownotes", function() {
   }).then(data => {
     $("#notes").append(`<h4>${data.title}</h4>`);
     $("#notes").append(
-      `<input class='form-control rounded-0 m2' placeholder='Note Title' id='titleinput' name='title'>`
+      `<input class='form-control rounded-0 mt-4 mb-2' placeholder='Note Title' id='titleinput' name='title'>`
     );
     $("#notes").append(
       `<textarea id='bodyinput' placeholder='Write Note Here' class='form-control rounded-0 mt-2' name='body'></textarea>`
@@ -33,7 +33,7 @@ $(document).on("click", ".shownotes", function() {
     $("#notes").append(
       `<button data-id='${
         data._id
-      }' id='savenote' class='btn btn-primary mt-2'>Save Note</button>`
+      }' id='savenote' class='btn btn-primary btn-lg btn-block mt-4'>Save Note</button>`
     );
 
     if (data.note) {
