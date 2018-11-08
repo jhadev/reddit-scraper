@@ -1,3 +1,3 @@
-# Reddit /r/popular Scraper
+# Reddit /r/todayilearned Scraper
 
-[View on Heroku](https://evening-peak-37590.herokuapp.com/)
+[View on Heroku](https://gentle-river-12321.herokuapp.com/)
