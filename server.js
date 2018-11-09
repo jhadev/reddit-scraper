@@ -65,8 +65,8 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .children("a")
         .attr("href");
-
-      db.Article.create(result)
+      
+        db.Article.create(result)
         .then(function(dbArticle) {
           // View the added result in the console
           console.log(dbArticle);
@@ -100,6 +100,16 @@ app.get("/articles/:id", (req, res) => {
       res.json(err);
     });
 });
+
+app.delete("/articles/:id", (req, res) => {
+  db.Article.findByIdAndDelete(req.params.id)
+    .then(dbArticle => {
+      res.json(dbArticle);
+    })
+    .catch(err => {
+      res.json(err)
+    })
+})
 
 app.post("/articles/:id", (req, res) => {
   db.Note.create(req.body)
