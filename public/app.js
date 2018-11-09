@@ -78,4 +78,19 @@ $(document).on("click", ".delete", function() {
   });
 });
 
+$(document).on("click", ".clear", function() {
+  
+  $.ajax({
+    method: "DELETE",
+    url: "/articles/"
+  })
+  .then(function(data) {
+    location.reload()
+  });
+});
+
+$(document).on("click", "#clear-button", function() {
+  $('.clear-modal').modal('show');
+});
+
 

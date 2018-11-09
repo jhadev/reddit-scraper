@@ -111,6 +111,16 @@ app.delete("/articles/:id", (req, res) => {
     })
 })
 
+app.delete("/articles/", (req, res) => {
+  db.Article.deleteMany()
+    .then(dbArticle => {
+      res.json(dbArticle);
+    })
+    .catch(err => {
+      res.json(err)
+    })
+})
+
 app.post("/articles/:id", (req, res) => {
   db.Note.create(req.body)
     .then(dbNote => {

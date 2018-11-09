@@ -47,10 +47,14 @@ img {
   font-size: 16px;
 }
 
-#clear {
+.clear {
   font-size: 16px;
 }
 
+#clear-button {
+  font-size: 16px;
+  margin-left: 10px;
+}
 .btn-outline-light:hover {
   color: #FF5700
 }
