@@ -95,24 +95,17 @@ $(document).on("click", "#clear-button", function() {
   $('.clear-modal').modal('show');
 });
 
-$(document).on("click", ".delete-note", function() {
-  $('.note-delete-modal').modal('show');
-});
 
-$(document).on("click", ".delete-note-button", function() {
+$(document).on("click", ".delete-note", function() {
   
   let thisId = $(this).attr("data-id");
 
   $.ajax({
     method: "POST",
-    url: "/articles/" + thisId,
-    data: {
-      title: $("#titleinput").empty(),
-      body: $("#bodyinput").empty()
-    }
+    url: "/articles/" + thisId
   })
   .then(function(data) {
-    location.reload()
+    $('.note-delete-modal').modal('show');
   });
 
   $("#titleinput").val("");
