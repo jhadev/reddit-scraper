@@ -35,13 +35,13 @@ $(document).on("click", ".shownotes", function() {
     
     $("#notes").append(bodyInput);
 
-    const noteButton = `<button data-id='${data._id}' id='savenote' class='btn btn-outline-info btn-lg btn-block mt-4'>Save Note</button>`;
+    const noteButton = `<button data-id='${data._id}' id='savenote' class='btn btn-outline-info btn-block mt-4'>Save Note</button>`;
 
     $("#notes").append(noteButton)
 
-    /*const deleteButton = `<button class='btn btn-outline-danger btn-block text-center delete-note text-right float-right mt-4' data-id=${data._id}>DELETE</button>`
+    const deleteButton = `<button class='btn btn-outline-danger btn-block text-center delete-note' data-id=${data._id}>Delete Note</button>`
 
-    $("#notes").append(deleteButton)*/
+    $("#notes").append(deleteButton)
 
     if (data.note) {
       $("#titleinput").val(data.note.title);
@@ -96,12 +96,12 @@ $(document).on("click", "#clear-button", function() {
 });
 
 
-/*$(document).on("click", ".delete-note", function() {
+$(document).on("click", ".delete-note", function() {
   
   let thisId = $(this).attr("data-id");
 
   $.ajax({
-    method: "DELETE",
+    method: "POST",
     url: "/articles/" + thisId
   })
   .then(function(data) {
@@ -110,4 +110,4 @@ $(document).on("click", "#clear-button", function() {
 
   $("#titleinput").val("");
   $("#bodyinput").val("");
-});*/
+});
