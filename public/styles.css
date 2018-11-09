@@ -51,6 +51,14 @@ img {
   font-size: 16px;
 }
 
+.wrapper {
+  padding: 50px;
+}
+
+.article-body {
+  margin-bottom: 20px;
+}
+
 #clear-button {
   font-size: 16px;
   margin-left: 10px;
@@ -79,7 +87,8 @@ img {
 }
 
 .delete {
-  font-size: 10px;
+  font-size: 12px;
   text-align: right;
   margin-bottom: 4px;
+  margin-top: 6px;
 }

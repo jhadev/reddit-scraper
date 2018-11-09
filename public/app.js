@@ -1,9 +1,10 @@
 $.getJSON("/articles", articles => {
   articles.forEach(article => {
-    $("#articles").append(`<p class='shownotes' data-id=${article._id}>
+    $("#articles").append(`<div class='article-body'><p class='shownotes' data-id=${article._id}>
     ${article.title}</p>
-    <a class='link' target="_blank" href="${article.link}">View Source</a>
+    <a class='link btn btn-outline-primary btn-lg' target="_blank" href="${article.link}">View Source</a>
     <button class='btn btn-danger delete text-right float-right' data-id=${article._id}>DELETE</button>
+    </div>
     `);
   });
 });
@@ -13,7 +14,7 @@ $(document).on("click", ".shownotes", function() {
 
   $("body").animate(
     {
-      scrollTop: $(".container").offset().top
+      scrollTop: $(".wrapper").offset().top
     },
     2000
   );
