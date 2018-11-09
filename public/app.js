@@ -59,7 +59,7 @@ $(document).on("click", "#savenote", function() {
     }
   })
   .then(function(data) {
-    $('.modal').modal('show');
+    $('.save-modal').modal('show');
   });
 
   $("#titleinput").val("");
