@@ -2,8 +2,8 @@ $.getJSON("/articles", articles => {
   articles.forEach(article => {
     $("#articles").append(`<div class='article-body'><p class='shownotes' data-id=${article._id}>
     ${article.title}</p>
-    <a class='link btn btn-outline-primary btn-lg' target="_blank" href="${article.link}">View Source</a>
-    <button class='btn btn-danger delete text-right float-right' data-id=${article._id}>DELETE</button>
+    <button class='btn btn-outline-danger delete text-right' data-id=${article._id}>Delete</button>
+    <a class='float-right link btn btn-outline-primary' target="_blank" href="${article.link}">View Source</a>
     </div>
     `);
   });
@@ -35,9 +35,13 @@ $(document).on("click", ".shownotes", function() {
     
     $("#notes").append(bodyInput);
 
-    const noteButton = `<button data-id='${data._id}' id='savenote' class='btn btn-primary btn-lg btn-block mt-4'>Save Note</button>`;
+    const noteButton = `<button data-id='${data._id}' id='savenote' class='btn btn-outline-info btn-lg btn-block mt-4'>Save Note</button>`;
 
     $("#notes").append(noteButton)
+
+    /*const deleteButton = `<button class='btn btn-outline-danger btn-block text-center delete-note text-right float-right mt-4' data-id=${data._id}>DELETE</button>`
+
+    $("#notes").append(deleteButton)*/
 
     if (data.note) {
       $("#titleinput").val(data.note.title);
@@ -61,9 +65,6 @@ $(document).on("click", "#savenote", function() {
   .then(function(data) {
     $('.save-modal').modal('show');
   });
-
-  $("#titleinput").val("");
-  $("#bodyinput").val("");
 });
 
 $(document).on("click", ".delete", function() {
@@ -95,3 +96,18 @@ $(document).on("click", "#clear-button", function() {
 });
 
 
+/*$(document).on("click", ".delete-note", function() {
+  
+  let thisId = $(this).attr("data-id");
+
+  $.ajax({
+    method: "DELETE",
+    url: "/articles/" + thisId
+  })
+  .then(function(data) {
+    $('.note-delete-modal').modal('show');
+  });
+
+  $("#titleinput").val("");
+  $("#bodyinput").val("");
+});*/

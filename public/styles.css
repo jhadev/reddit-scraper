@@ -23,7 +23,6 @@ h4 {
 }
 
 .link {
-  margin-bottom: 4px;
   font-size: 16px;
 }
 
@@ -65,15 +64,22 @@ img {
   margin-left: 10px;
 }
 .btn-outline-light:hover {
-  color: #FF5700
+  color: #FF5700;
 }
 
-.btn-primary {
+#savenote:hover {
   background-color: #FF5700;
-  border-color: #FF5700
+  border-color: #FF5700;
 }
 
-.btn-primary:hover {
+#savenote:active, #savenote:active:focus {
+  background-color: white !important;
+  color: #FF5700 !important;
+  border-color: #FF5700 !important;
+  box-shadow: none !important;
+}
+
+.btn-outline-info {
   background-color: white;
   color: #FF5700;
   border-color: #FF5700
@@ -88,8 +94,6 @@ img {
 }
 
 .delete {
-  font-size: 12px;
+  font-size: 16px;
   text-align: right;
-  margin-bottom: 4px;
-  margin-top: 6px;
 }

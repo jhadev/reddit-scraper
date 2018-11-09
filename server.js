@@ -144,6 +144,29 @@ app.post("/articles/:id", (req, res) => {
     });
 });
 
+/*app.delete("/articles/:id", (req, res) => {
+  db.Note.deleteOne(req.params.id)
+    .then(dbNote => {
+      return db.Article.findOneAndRemove(
+        {
+          _id: req.params.id
+        },
+        {
+          note: dbNote._id
+        },
+        {
+          new: true
+        }
+      );
+    })
+    .then(dbArticle => {
+      res.json(dbArticle);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});*/
+
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
