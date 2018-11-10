@@ -81,7 +81,7 @@ app.get("/scrape", function(req, res) {
 });
 
 app.get("/articles", function(req, res) {
-  db.Article.find({})
+  db.Article.find({}).sort({_id: -1})
     .then(dbUser => {
       res.json(dbUser);
     })
@@ -147,7 +147,7 @@ app.post("/articles/:id", (req, res) => {
 app.post("/articles/:id", (req, res) => {
   db.Note.delete(req.body)
     .then(dbNote => {
-      return db.Article.findOneAndUpdate(
+      return db.Article.findOneAndReplace(
         {
           _id: req.params.id
         },
