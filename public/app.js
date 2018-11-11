@@ -1,6 +1,6 @@
 $.getJSON("/articles", articles => {
   articles.forEach(article => {
-    $("#articles").append(`<div class='article-body'><p class='shownotes' data-id=${article._id}>
+    $("#articles").append(`<div class='article-body'><p id="time">Fetched: ${article.date}</p><p class='shownotes' data-id=${article._id}>
     ${article.title}</p>
     <button class='btn btn-outline-danger delete text-right' data-id=${article._id}>Delete</button>
     <a class='float-right link btn btn-outline-primary' target="_blank" href="${article.link}">View Source</a>

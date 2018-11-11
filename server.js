@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 var axios = require("axios");
 var cheerio = require("cheerio");
+var moment = require("moment");
 
 // Require all models
 var db = require("./models");
@@ -65,6 +66,9 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .children("a")
         .attr("href");
+      date = Date.now()
+      const formattedDate = moment(date).format('MMMM Do YYYY, h:mm:ss a')
+      result.date = formattedDate;
       
         db.Article.create(result)
         .then(function(dbArticle) {
